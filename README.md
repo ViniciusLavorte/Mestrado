@@ -1,2 +1,2 @@
 # Mestrado
-Contém todos os códigos desenvolvidos/utilizados por mim durante os estudos realizados no meu mestrado.
+Contém todos os códigos desenvolvidos/utilizados por mim durante meus estudos realizados no mestrado.
