@@ -1,0 +1,31 @@
+As variações implementadas são:
+
+ MST-CLU-DS (explora diversidade)
+
+    inicia com o agrupamento dos dados
+    seleciona amostras raizes dos clusteres na primeira iteraçao
+    aplica a MST em cada cluster
+    ordena as arestas de forma decrescente para cada cluster
+    popula uma lista iterando sobre cada cluster ordenado e pegando um elemento por vez 
+    seleciona os elementos de forma sequencial da lista
+
+MST-CLU-DDE (explora diversidade e incerteza)
+
+    inicia com o agrupamento dos dados
+    seleciona amostras raizes dos clusteres na primeira iteraçao
+    aplica a MST em cada cluster
+    ordena as arestas de forma decrescente para cada cluster
+    a cada iteração consulta a instancia atual do classificar por rótulos entre arestas de um mesmo clusters,
+    caso as amostras de arestas sejam de classes distintas eles são selecionadas, e prossegue para o próximo clusters ate atingir o numero desejado de amostras por iteração
+
+TÉCNICAS NO GITHUB:
+
+https://github.com/dhaalves/python-experiments
+
+https://github.com/dhaalves/weka_experiments
+
+https://github.com/dhaalves/CEAL_keras
+
+VÍDEO FILTRANDO DADOS:
+
+https://www.youtube.com/watch?v=H-cL-xlMGHE&feature=youtu.be
