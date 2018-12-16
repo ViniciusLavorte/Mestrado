@@ -1,0 +1,44 @@
+    # Funcao do OPF Cluster
+    def OPF(self):
+        global train
+        global train_bkp_class_index
+        # Loop para deixar todas classes = zero
+        label = train_bkp_class_index[:, 0]
+        x = 0
+        for i in label:
+            label[x] = 1
+            x += 1
+        # Recuperar o numero de amostras
+        num_samples = len(train)
+        # Recuperar o numero de classes e colocar todas como numero 1 para ser
+        # aprendizado nao supervisionado
+        aux2 = []
+        for i in label:
+            if i not in aux2:
+                aux2.append(i)
+        num_classes = len(aux2)
+        # Recuperar o numero de features
+        num_features = len(train[0])
+        # Escrever num txt o cabecalho OPF
+        cabecalho = str(num_samples) + ' ' + \
+            str(num_classes) + ' ' + str(num_features)
+        # Criar um array de 0 ate o num de amostras
+        array = np.arange(0, num_samples, 1)
+        array = np.vstack(array)
+        # Concatenar o train com a ordenacao de amostras
+        label = np.vstack(label)
+        array = np.concatenate((array, label, train), axis=1)
+        # Escrever num txt o dataframe em formato OPF
+        print('===') * 30
+        print('')
+        print('Salvar TXT, converter em OPF e clusterizar')
+        print('')
+        np.savetxt('saida.txt', array, delimiter=' ',
+                   fmt='%.10s', header=cabecalho, comments='')
+        t = time.time()
+        # Transformar o arquivo txt em OPF e clusterizar
+        os.system('bash automation.sh')
+        print('')
+        print('OPF Cluster aplicado com sucesso! (Tempo de execucao: {})'.format(
+            time.time() - t))
+        print('')
