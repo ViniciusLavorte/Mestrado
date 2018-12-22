@@ -5,7 +5,7 @@ from keras import losses, metrics, callbacks, optimizers, activations, models, l
 from IPython.display import clear_output
 from keras.models import Model
 import visdom
-
+//1
 def _nasnet_large(num_classes, freezed=True):
     base_model = nasnet.NASNetLarge(weights='imagenet', include_top=False)
     x = base_model.output
